@@ -1,13 +1,24 @@
 import Route from '@ioc:Adonis/Core/Route'
 
-export default function coursesRoutes() {
+export function coursesRoutes() {
   Route.group(() => {
-    Route.get('/', async () => {
-      return { courses: 'world' }
-    })
-
-    Route.get('/:id', async ({ params }) => {
-      return { course: params.id }
-    })
+    Route.get('/', 'CoursesController.index')
+    Route.get('/:id', 'CoursesController.show')
+    Route.post('/', 'CoursesController.store')
+    Route.put('/:id', 'CoursesController.update')
+    Route.delete('/:id', 'CoursesController.destroy')
   }).prefix('/courses')
+}
+
+export function AdminCoursesRoutes() {
+  Route.group(() => {
+    Route.get('/', 'CoursesController.index')
+    Route.get('/:id', 'CoursesController.show')
+    Route.post('/', 'CoursesController.store')
+    Route.put('/:id', 'CoursesController.update')
+    Route.delete('/:id', 'CoursesController.destroy')
+  })
+    .prefix('/courses')
+    .namespace('App/Controllers/Http/Admin')
+    .prefix('admin')
 }
