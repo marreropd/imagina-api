@@ -1,4 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import DateService from 'App/Services/DateService'
 
 export default class CoursesController {
   public async index({}: HttpContextContract) {
@@ -8,7 +9,11 @@ export default class CoursesController {
   public async create({}: HttpContextContract) {}
 
   public async store({}: HttpContextContract) {
-    return 'store'
+    const dateTime = DateService.toDateTime()
+
+    const formattedDate = DateService.toDate(dateTime)
+
+    return `creating a course at ${formattedDate}`
   }
 
   public async show({ params }: HttpContextContract) {
