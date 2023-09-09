@@ -1,13 +1,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 export function coursesRoutes() {
-  Route.group(() => {
-    Route.get('/', 'CoursesController.index')
-    Route.get('/:id', 'CoursesController.show')
-    Route.post('/', 'CoursesController.store')
-    Route.put('/:id', 'CoursesController.update')
-    Route.delete('/:id', 'CoursesController.destroy')
-  }).prefix('/courses')
+  Route.resource('courses', 'CoursesController')
 }
 
 export function AdminCoursesRoutes() {
