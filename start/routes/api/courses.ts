@@ -1,7 +1,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 export function coursesRoutes() {
-  Route.resource('courses', 'CoursesController')
+  Route.resource('courses', 'CoursesController').middleware({ '*': ['authorize'] })
 }
 
 export function AdminCoursesRoutes() {
