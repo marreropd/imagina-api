@@ -21,7 +21,6 @@ export default class extends BaseSchema {
     this.defer(async (db) => {
       await db.table(this.tableName).multiInsert([
         {
-          id: 1,
           title: 'Curso Online de Excel Intermedio',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg',
@@ -32,7 +31,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 2,
           title: 'Curso Online de Power BI Avanzado',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/900px-New_Power_BI_Logo.svg.png?20210102182532',
@@ -43,7 +41,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 3,
           title: 'Curso Online de Excel',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg',
@@ -54,7 +51,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 4,
           title: 'Curso Online de Power BI',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/900px-New_Power_BI_Logo.svg.png?20210102182532',
@@ -65,7 +61,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 5,
           title: 'Curso Online de Dynamics Business Central',
           course_image:
             'https://www.waldo.be/wp-content/uploads/2021/11/business-central-logo-300x300.png',
@@ -76,7 +71,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 6,
           title: 'Curso Online de Sharepoint Avanzado',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/e/e1/Microsoft_Office_SharePoint_%282019%E2%80%93present%29.svg',
@@ -87,7 +81,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 7,
           title: 'Curso Online de Python',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/182px-Python-logo-notext.svg.png',
@@ -99,7 +92,6 @@ export default class extends BaseSchema {
         },
         // 21 jan
         {
-          id: 8,
           title: 'Curso Online de Kotlin',
           course_image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDp-Mgoi8FXtDIVIFWPNc4j9Hu6vXGYY_ejzmSVFVjiw&s',
@@ -110,7 +102,6 @@ export default class extends BaseSchema {
           is_limited_places: true,
         },
         {
-          id: 9,
           title: 'Curso Online de Kotlin Avanzado',
           course_image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDp-Mgoi8FXtDIVIFWPNc4j9Hu6vXGYY_ejzmSVFVjiw&s',
@@ -122,7 +113,6 @@ export default class extends BaseSchema {
         },
 
         {
-          id: 10,
           title: 'Curso Online de C# 11 Avanzado',
           course_image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDp-Mgoi8FXtDIVIFWPNc4j9Hu6vXGYY_ejzmSVFVjiw&s',
@@ -134,7 +124,6 @@ export default class extends BaseSchema {
         },
 
         {
-          id: 11,
           title: 'Curso Online de React Native',
           course_image:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207',
