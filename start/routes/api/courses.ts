@@ -7,7 +7,7 @@ export function coursesRoutes() {
 export function AdminCoursesRoutes() {
   Route.group(() => {
     Route.get('/', 'CoursesController.index')
-    Route.get('/:id', 'CoursesController.show')
+    Route.get('/show', 'CoursesController.show')
     Route.post('/', 'CoursesController.store')
     Route.put('/:id', 'CoursesController.update')
     Route.delete('/:id', 'CoursesController.destroy')
