@@ -12,16 +12,16 @@ export default class Course extends BaseModel {
   public courseImage: string
 
   @column({ columnName: 'next_start_date' })
-  public nextStartDate: string
+  public nextStartDate: Date
 
   @column()
   public bonus: string
 
   @column()
-  public duration: number
+  public duration: number | null
 
   @column({ columnName: 'places_avaiables' })
-  public placesAvaiables: number
+  public placesAvaiables: number | null
 
   @column({ columnName: 'is_limited_places' })
   public isLimitedPlaces: boolean
