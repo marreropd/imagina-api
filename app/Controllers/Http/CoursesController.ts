@@ -1,23 +1,47 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import DateService from 'App/Services/DateService'
+import Course from 'App/Models/Course'
+import { DateTime } from 'luxon'
+import _ from 'lodash'
 
 export default class CoursesController {
-  public async index({}: HttpContextContract) {
-    return 'listing courses'
+  public async index({ response }: HttpContextContract) {
+    const courses = await Course.all()
+
+    return response.json(courses)
   }
 
   public async create({}: HttpContextContract) {}
 
-  public async store({}: HttpContextContract) {
-    const dateTime = DateService.toDateTime()
+  public async store({ request }: HttpContextContract) {
+    /*     const course = new Course() */
 
-    const formattedDate = DateService.toDate(dateTime)
+    const data = request.only([
+      'title',
+      'courseImage',
+      'nextStartDate',
+      'bonus',
+      'placesAvaiables',
+      'isLimitedPlaces',
+    ])
 
-    return `creating a course at ${formattedDate}`
+    /*     await course.merge(data) */
+
+    const course = await Course.create(data)
+
+    return course
   }
 
-  public async show({ params }: HttpContextContract) {
-    return `show with params ${params}`
+  public async show({ response }: HttpContextContract) {
+    const today = DateTime.now().toISODate()
+    const twoMonthFromToday = DateTime.now().plus({ month: 2 }).toISODate()
+
+    const courses = await Course.query()
+      .where('next_start_date', '<=', `${twoMonthFromToday}`)
+      .where('next_start_date', '>', `${today}`)
+
+    const groupedByDate = _.groupBy(courses, ({ nextStartDate }) => nextStartDate)
+
+    return response.json(groupedByDate)
   }
 
   public async edit({}: HttpContextContract) {
