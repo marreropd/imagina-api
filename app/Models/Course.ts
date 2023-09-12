@@ -12,7 +12,7 @@ export default class Course extends BaseModel {
   public courseImage: string
 
   @column({ columnName: 'next_start_date' })
-  public nextStartDate: Date
+  public nextStartDate: DateTime
 
   @column()
   public bonus: string
