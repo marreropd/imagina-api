@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('title', 100).unique().notNullable()
       table.string('course_image').notNullable()
-      table.date('next_start_date')
+      table.dateTime('next_start_date')
       table.string('bonus')
       table.integer('duration').defaultTo(60)
       table.integer('places_avaiables').defaultTo(5)
