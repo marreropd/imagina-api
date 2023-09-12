@@ -39,9 +39,7 @@ export default class CoursesController {
       .where('next_start_date', '<=', `${twoMonthFromToday}`)
       .where('next_start_date', '>', `${today}`)
 
-    const groupedByDate = _.groupBy(courses, ({ nextStartDate }) => nextStartDate)
-
-    return response.json(groupedByDate)
+    return response.json(courses)
   }
 
   public async edit({}: HttpContextContract) {
