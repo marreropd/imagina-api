@@ -4,7 +4,6 @@ class DateService {
   public defautFormat = 'MM dd yyyy'
 
   constructor(defaultFormat: string | null = null) {
-    console.log('Date Service > instantiated')
     this.defautFormat = defaultFormat ?? this.defautFormat
   }
 

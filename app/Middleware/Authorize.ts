@@ -8,7 +8,6 @@ export default class Authorize {
       return response.unauthorized({ error: "You're not autorizhed" })
     } */
 
-    console.log('authorize before next')
     await next()
   }
 }
